@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body > div {
+    width: 100%;
+}
+
+.first {
+    height: 144px;
+    background-color: blue;
+}
+
+.second {
+    height: 800px;
+    background-color: aqua;
+}
+
+.third {
+    height: 2380px;
+    display: flex;
+    background-color: cadetblue;
+}
+
+.fourth {
+    height: 550px;
+    background-color: blueviolet;
+}
+
+
+
+    .fifth {
+        height: 1385px;
+        background-color: coral;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .upper, .lower {
+        margin-left: 15%;
+        background-color: black;
+        color: white;
+    }
+
+    .upper {
+        height: 1100px;
+        width: 36vw;
+    }
+
+    .lower {
+        height: 200px;
+        width: 60vw;
+    }
