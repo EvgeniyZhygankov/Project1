@@ -17,11 +17,70 @@ body > div {
     background-color: aqua;
 }
 
-.third {
-    height: 2380px;
-    display: flex;
-    background-color: cadetblue;
-}
+
+
+    .third {
+        height: 2380px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-color: cadetblue;
+    }
+
+    .container {
+        height: 2280px;
+        width: 60vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: red;
+        margin-bottom: 2%;
+    }
+
+    .inner1, .inner2 {
+        margin-top: 3%;
+    }
+
+    .inner1 {
+        height: 500px;
+        width: 23vw;
+        background-color: forestgreen;
+        margin-left: 2%;
+    }
+
+    .inner2 {
+        height: 380px;
+        width: 29vw;
+        background-color: cornflowerblue;
+        margin-right: 2%;
+    }
+
+    .inner3 {
+        height: 530px;
+        width: 60vw;
+        background-color: yellow;
+    }
+
+    .inner4 {
+        height: 600px;
+        width: 30vw;
+        background-color: white;
+    }
+
+    .inner5 {
+        height: 600px;
+        width: 30vw;
+        background-color: blue;
+    }
+
+    .inner6 {
+        height: 540px;
+        width: 40vw;
+        background-color: darkgray;
+        align-self: flex-start;
+    }
+
+
 
 .fourth {
     height: 550px;
@@ -47,6 +106,7 @@ body > div {
     .upper {
         height: 1100px;
         width: 36vw;
+        margin-top: 2%;
     }
 
     .lower {
