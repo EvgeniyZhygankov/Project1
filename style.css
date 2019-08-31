@@ -12,6 +12,8 @@ body > div {
     background-color: blue;
 }
 
+
+
 .second {
     height: 800px;
     background-color: aqua;
@@ -112,4 +114,82 @@ body > div {
     .lower {
         height: 200px;
         width: 60vw;
+    }
+
+    .six {
+        display: none;
+    }
+
+    @media (max-width: 425px) {
+
+        .first {
+            height: 60vh;
+        }
+
+        .second {
+            height: 650px;
+        }
+
+        .third {
+            height: 3400px;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            
+            justify-content: space-around;
+            align-content: flex-start;
+            margin: 0;
+        }
+
+        .inner1, .inner2, .inner3, .inner5, .inner6 {
+            width: 90vw;
+            margin: 2% 0 0 0;
+        }
+
+        .inner1 {
+            height: 300px;
+        }
+
+        .inner2 {
+            height: 400px;
+        }
+
+        .inner3 {
+            height: 500px;
+        }
+
+        .inner4 {
+            height: 100px;
+            width: 100%;
+            margin: 2% 0 0 0;
+        }
+
+        .inner5 {
+            height: 1300px;
+        }
+
+        .inner6 {
+            height: 600px;
+        }
+
+        .fourth {
+            height: 400px;
+        }
+
+        .fifth {
+                height: 1480px;
+        }
+
+        .upper, .lower {
+            display: none;
+        }
+
+        .six {
+            display: block;
+            height: 130px;
+            width: 100%;
+            background: cadetblue;
+        }
     }
