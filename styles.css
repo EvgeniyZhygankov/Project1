@@ -1,0 +1,188 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body > div, html > div {
+  width: 100%;
+}
+
+.red {
+  color: red;
+}
+
+header {
+  height: 100px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .takelook {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 26px;
+  letter-spacing: 0.1em;
+  margin-left: 390px;
+}
+
+header .phones, header .numbers {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0px 0 0 15px;
+  color: #B3B3B3;
+}
+
+header .numbers {
+  margin: 0 800px 0 0;
+  color: #37373F;
+}
+
+header .callback {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  background-color: #C94042;
+  color: white;
+  padding: 15px;
+  border-radius: 3px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.tagline {
+  height: 800px;
+  background-image: url(images/Vector.png);
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tagline > .container {
+  margin-right: 600px;
+}
+
+.tagline > .container .marketingString {
+  margin: 0 0 20px 0;
+}
+
+.tag1500 {
+  width: 232px;
+  height: 103px;
+  background-image: url(images/tagBack.png);
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "cost percent" "P1500 percent";
+  -ms-grid-columns: 140px 1fr;
+      grid-template-columns: 140px 1fr;
+  -ms-grid-rows: 40px 1fr;
+      grid-template-rows: 40px 1fr;
+}
+
+.tag1500 .cost {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  font-size: 20px;
+  line-height: 151.16%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: cost;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin: 0;
+}
+
+.tag1500 .P1500 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: P1500;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin: 0;
+}
+
+.tag1500 .percent {
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: percent;
+  -ms-flex-item-align: start;
+      align-self: start;
+  margin: 13px 0 0 5px;
+}
+
+.btnReservation {
+  text-decoration: none;
+  border-radius: 3px;
+  border: 3px solid white;
+  padding: 20px 45px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 17px;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+/*# sourceMappingURL=styles.css.map */
