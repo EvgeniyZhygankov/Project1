@@ -1,0 +1,200 @@
+@mixin font {
+    font-family: Montserrat;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 17px;
+}
+
+@mixin btnHover($color) {
+    &:hover {
+        background-color: $color;
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    > div {
+        width: 100%;
+    }
+    @include font();
+}
+
+.red{
+    color: red
+}
+
+header {
+    height: 100px;
+    // @include font;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .takelook {
+        font-weight: 600;
+        font-size: 21px;
+        line-height: 26px;
+        letter-spacing: 0.1em;
+        margin-left: 390px;
+    } 
+    .phones {
+        font-weight: normal;
+        font-size: 14px;   
+        line-height: 17px;
+        margin: 0px 0 0 15px;
+        color: #B3B3B3;
+    }
+    .numbers {
+        @extend .phones;
+        margin: 0 800px 0 0;
+        color: #37373F;
+    }
+    .callback {
+        // @include font;
+        @include btnHover(rgba(201, 64, 66, 0.8));
+        background-color: rgba(201, 64, 66, 1);
+        color: white;
+        padding: 15px;
+        border-radius: 3px;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
+.tagline {
+    height: 800px;
+    background-image: url(images/Vector.png);
+    // @include font;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 49px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > .container {
+        margin-right: 600px;
+        .marketingString {
+            margin: 0 0 20px 0;
+        }
+    }
+}
+.tag1500 {
+    width: 232px;
+    height: 103px;
+    background-image: url(images/tagBack.png);
+    display: grid;
+    grid-template-areas: "cost percent" "P1500 percent";
+    grid-template-columns: 140px 1fr;
+    grid-template-rows: 40px 1fr;
+    .cost {
+        // @include font;
+        font-size: 20px;
+        line-height: 151.16%;
+        grid-area: cost;
+        align-self: end;
+        justify-self: end;
+        margin: 0;
+    }
+    .P1500 {
+        // @include font;
+        font-weight: 800;
+        font-size: 35px;
+        line-height: 53px;
+        grid-area: P1500;
+        align-self: start;
+        justify-self: end;
+        margin: 0;
+    }
+    .percent {
+        border: 1px solid white;
+        border-radius: 50%;
+        height: 60px;
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: percent;
+        align-self: start;
+        margin: 13px 0 0 5px;
+    }
+}
+
+.btnReservation {
+    text-decoration: none;
+    border-radius: 3px;
+    border: 3px solid white;
+    padding: 20px 45px;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    @include btnHover(rgba(253, 253, 255, 0.2));
+}
+
+.third {
+    height: 2380px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    .container {
+        height: 2280px;
+        width: 60vw;
+        margin-bottom: 2%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 10% 10% 10% 10% 10% 10% 10%;
+        grid-template-areas: "item-1 item-7"
+                             "item-2 item-7"
+                             "item-3 item-7"
+                             "item-4 item-7"
+                             "item-5 item-7"
+                             "item-6 item-7";
+        > div {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+}
+
+.item-1 {
+    grid-area: item-1;
+    // font-weight: 500;
+    // font-size: 40px;
+    // line-height: 49px;
+    // color: #37373F;
+    // margin: 0;
+    > p {
+        width: 100%;
+    }
+}
+
+.item-2 {
+    grid-area: item-2;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    color: #37373F;
+}
+
+.item-3 {
+    grid-area: item-3;
+}
+
+.item-4 {
+    grid-area: item-4;
+}
+
+.item-5 {
+    grid-area: item-5;
+}
+
+.item-6 {
+    grid-area: item-6;
+}
+
+.item-7 {
+    grid-area: item-7;
+}
