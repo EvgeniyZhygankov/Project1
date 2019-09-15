@@ -12,6 +12,9 @@
     }
 }
 
+$border: 0.5px solid #C7C7C7;
+$clDarkRed: #C94042;
+
 body, html {
     margin: 0;
     padding: 0;
@@ -27,7 +30,6 @@ body, html {
 
 header {
     height: 100px;
-    // @include font;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -51,9 +53,8 @@ header {
         color: #37373F;
     }
     .callback {
-        // @include font;
         @include btnHover(rgba(201, 64, 66, 0.8));
-        background-color: rgba(201, 64, 66, 1);
+        background-color: $clDarkRed;
         color: white;
         padding: 15px;
         border-radius: 3px;
@@ -66,7 +67,6 @@ header {
 .tagline {
     height: 800px;
     background-image: url(images/Vector.png);
-    // @include font;
     font-weight: bold;
     font-size: 40px;
     line-height: 49px;
@@ -82,43 +82,36 @@ header {
     }
 }
 .tag1500 {
-    width: 232px;
-    height: 103px;
+    width: 230px;
+    height: 99px;
     background-image: url(images/tagBack.png);
-    display: grid;
-    grid-template-areas: "cost percent" "P1500 percent";
-    grid-template-columns: 140px 1fr;
-    grid-template-rows: 40px 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     .cost {
-        // @include font;
+        font-weight: normal;
         font-size: 20px;
         line-height: 151.16%;
-        grid-area: cost;
-        align-self: end;
-        justify-self: end;
         margin: 0;
+        width: 55%;
+        align-self: center;
+        margin-bottom: 15px;
     }
     .P1500 {
-        // @include font;
         font-weight: 800;
         font-size: 35px;
-        line-height: 53px;
-        grid-area: P1500;
-        align-self: start;
-        justify-self: end;
-        margin: 0;
     }
     .percent {
         border: 1px solid white;
         border-radius: 50%;
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
-        grid-area: percent;
-        align-self: start;
-        margin: 13px 0 0 5px;
+        margin-bottom: 15px;
     }
 }
 
@@ -142,59 +135,284 @@ header {
     .container {
         height: 2280px;
         width: 60vw;
-        margin-bottom: 2%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        // margin-bottom: 2%;
+    }
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 50%;
+    > div {
+        display: flex;
+        align-items: center;
+        > p {
+            margin-left: 10px;
+        }
+    }
+    > p:nth-child(1) {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 49px;
+        color: #37373F;
+        margin: 0;
+    }
+    > p:nth-child(2) {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 26px;
+        color: #37373F;
+    }
+
+    > div:last-child {
+        border-bottom: $border;
+        border-top: $border;
+    }
+}
+
+.moreThan50 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    img:first-child {
+        margin-right: 20px;
+    }
+    > p {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 26px;
+        color: #37373F;
+        > span {
+            font-weight: 600;
+        }
+    }
+    img:last-child {
+        margin-left: 20px;
+    }
+}
+
+.mainImage {
+    height: 380px;
+    width: 29vw;
+}
+
+.photos {
+    height: 530px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+    border-bottom: $border;
+    > div {
         display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: 10% 10% 10% 10% 10% 10% 10%;
-        grid-template-areas: "item-1 item-7"
-                             "item-2 item-7"
-                             "item-3 item-7"
-                             "item-4 item-7"
-                             "item-5 item-7"
-                             "item-6 item-7";
-        > div {
-            display: flex;
-            align-items: flex-start;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px 10px;
+        justify-items: stretch;
+    }
+    > p {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 29px;
+        color: #37373F;
+    }
+    > a {
+        align-self: center;
+        margin-top: 40px;
+    }
+}
+
+.link {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+    color: #5286EC;
+    text-decoration: none;
+}
+
+.inner4 {
+    height: 600px;
+    width: 60%;
+    color: #37373F;
+    border-bottom: $border;
+    > p {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        > span {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 26px;
         }
     }
 }
 
-.item-1 {
-    grid-area: item-1;
-    // font-weight: 500;
-    // font-size: 40px;
-    // line-height: 49px;
-    // color: #37373F;
-    // margin: 0;
-    > p {
-        width: 100%;
+$margin: 50px;
+
+.inner5 {
+    height: 600px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-bottom: $border;
+    > img {
+        align-self: flex-start;
+        margin-top: $margin - 15px;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: $margin;
+        > img:last-child {
+            height: 139px;
+            width: 139px;
+        } 
+        > p:nth-child(2) {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
+        > p:nth-child(3) {
+            margin: 0 0 10px 0;
+        }
+        > a {
+            text-align: center;
+        } 
+    }      
+}
+
+.inner6 {
+    height: 540px;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+
+    color: #37373F;
+    > P {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 29px;
+    }
+    > div {
+        border: $border;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 26px;
+        img {
+            margin-left: 20px;
+        }
+        .cup {
+            margin-left: 0;
+            margin-right: 20px;
+        }
+        > div {
+            width: 97%;
+            display: flex;
+            padding-left: 3%;
+        }
+        > div:nth-child(1), div:nth-child(2) {
+            border-bottom: $border;
+        } 
     }
 }
 
-.item-2 {
-    grid-area: item-2;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 26px;
-    color: #37373F;
+.timetable {
+    justify-content: space-between;
+    align-items: center;
+    span {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+    }
 }
 
-.item-3 {
-    grid-area: item-3;
+.btn-red {
+    @extend .btnReservation;
+    border-color: $clDarkRed;   
+    color: $clDarkRed;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-right: 40px;
+    padding: 15px 30px;
 }
 
-.item-4 {
-    grid-area: item-4;
+.fourth {
+    height: 509px;
+    width: 100%;
+    background: url(images/big_map.jpg);
+    display: flex;
+    align-items: flex-end;
 }
 
-.item-5 {
-    grid-area: item-5;
+.mapLegend {
+    height: 469px;
+    width: 420px;
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    margin-left: 390px;
+    > .item:first-child {
+        margin-top: 53px;
+    }
 }
 
-.item-6 {
-    grid-area: item-6;
+.item {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    height: 61px;
+    width: 100%;
+    margin-left: 10%;
+    > div {
+        border-radius: 50%;
+        background-color: $clDarkRed;
+        color: white;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 61px;
+        width: 61px;
+        margin-right: 15px;
+    }
+    > p {
+        margin: 4px;
+    }
+    > p:nth-child(1) {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+    }
+    > p:nth-child(2) {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 26px;
+    }
 }
 
-.item-7 {
-    grid-area: item-7;
+.marieInLegend {
+    height: 80px;
+    > img {
+        height: 61px;
+        width: 61px;
+        margin-right: 20px;
+    }
+    > p {
+        margin: 0;
+    }
 }

@@ -35,26 +35,23 @@ body > div {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: flex-start;
         background-color: red;
         margin-bottom: 2%;
-    }
-
-    .inner1, .inner2 {
-        margin-top: 3%;
     }
 
     .inner1 {
         height: 500px;
         width: 23vw;
         background-color: forestgreen;
-        margin-left: 2%;
+        /* margin-left: 2%; */
     }
 
     .inner2 {
         height: 380px;
         width: 29vw;
         background-color: cornflowerblue;
-        margin-right: 2%;
+        /* margin-right: 2%; */
     }
 
     .inner3 {
