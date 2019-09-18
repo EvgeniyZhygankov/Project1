@@ -15,6 +15,7 @@
 
 $border: 0.5px solid #C7C7C7;
 $clDarkRed: #C94042;
+$margin: 50px;
 
 body, html {
     margin: 0;
@@ -27,7 +28,7 @@ body, html {
 }
 
 .red{
-    color: red
+    color: $clDarkRed;
 }
 
 header {
@@ -43,6 +44,7 @@ header {
     line-height: 26px;
     letter-spacing: 0.1em;
     margin-left: 20%;
+    flex-shrink: 0;
 } 
 
 .phones {
@@ -52,12 +54,13 @@ header {
     margin: 0 0 0 15px;
     color: #B3B3B3;
 }
+
 .numbers {
     @extend .phones;
     width: 40%;
-    // margin: 0 40% 0 0;
     color: #37373F;
 }
+
 .callback {
     @include btnHover(rgba(201, 64, 66, 0.8));
     background-color: $clDarkRed;
@@ -67,26 +70,36 @@ header {
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
+    flex-shrink: 0;
 }
 
 .tagline {
-    height: 800px;
-    background-image: url(images/Vector.png);
-    background-repeat: space;
+    height: 840px;
+    background-image: url(images/BackgroundDesktop.png);
+    background-repeat: round;
+    background-position: left center;
     font-weight: bold;
     font-size: 40px;
     line-height: 49px;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
-    > .container {
-        margin-right: 600px;
+    justify-content: flex-start;
+    // > img {
+    //     position: absolute;
+    //     // width: 100%;
+    //     // height: 100%;
+    //     clip: rect(auto, auto, 700px, auto);
+    //     z-index: -1;
+    // }
+    .container {
+        margin: 130px 0 0 20%;
         .marketingString {
             margin: 0 0 20px 0;
         }
     }
 }
+
 .tag1500 {
     width: 230px;
     height: 99px;
@@ -96,29 +109,32 @@ header {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    .cost {
-        font-weight: normal;
-        font-size: 20px;
-        line-height: 151.16%;
-        margin: 0;
-        width: 55%;
-        align-self: center;
-        margin-bottom: 15px;
-    }
-    .P1500 {
-        font-weight: 800;
-        font-size: 35px;
-    }
-    .percent {
-        border: 1px solid white;
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 15px;
-    }
+}
+
+.cost {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 151.16%;
+    margin: 0;
+    width: 55%;
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+.P1500 {
+    font-weight: 800;
+    font-size: 35px;
+}
+
+.percent {
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 .btnReservation {
@@ -148,43 +164,74 @@ header {
     }
 }
 
+@mixin des {
+    display: flex;
+    align-items: center;
+}
+
 .description {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     height: 500px;
     width: 50%;
-    > div {
-        display: flex;
-        align-items: center;
-        > p {
-            margin-left: 10px;
-        }
+    > img {
+        order: 7;
     }
-    > p:nth-child(1) {
-        font-weight: 500;
-        font-size: 40px;
-        line-height: 49px;
-        color: #37373F;
-        margin: 0;
-    }
-    > p:nth-child(2) {
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 26px;
-        color: #37373F;
-    }
+}
 
-    > div:last-child {
-        border-bottom: $border;
-        border-top: $border;
-    }
+.des-name {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 49px;
+    color: #37373F;
+    margin: 0;
+    order: 0;
+    @include des();
+}
+
+.des-des {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 26px;
+    color: #37373F;
+    order: 1;
+    @include des();
+}
+
+.des-clock {
+    order: 2;
+    @include des();
+}
+
+.des-photos {
+    order:3;
+    @include des();
+}
+
+.des-place {
+    order: 4;
+    @include des();
+}
+
+.des-lang {
+    order: 5;
+    @include des();
+}
+
+.des-money {
+    display: none;
 }
 
 .moreThan50 {
     width: 100%;
     display: flex;
     align-items: center;
-    img:first-child {
+    border-bottom: $border;
+    border-top: $border;
+    order: 6;
+    @include des();
+    > *:first-child {
         margin-right: 20px;
     }
     > p {
@@ -196,14 +243,9 @@ header {
             font-weight: 600;
         }
     }
-    img:last-child {
+    > *:last-child {
         margin-left: 20px;
     }
-}
-
-.mainImage {
-    height: 380px;
-    width: 29vw;
 }
 
 .photos {
@@ -246,19 +288,18 @@ header {
     width: 60%;
     color: #37373F;
     border-bottom: $border;
+    order: 1;
     > p {
         font-weight: normal;
         font-size: 16px;
         line-height: 24px;
         > span {
-            font-weight: 500;
+            font-weight: 600;
             font-size: 18px;
             line-height: 26px;
         }
     }
 }
-
-$margin: 50px;
 
 .inner5 {
     height: 600px;
@@ -267,6 +308,7 @@ $margin: 50px;
     justify-content: center;
     align-items: flex-start;
     border-bottom: $border;
+    order: 1;
     > img {
         align-self: flex-start;
         margin-top: $margin - 15px;
@@ -282,13 +324,12 @@ $margin: 50px;
             width: 139px;
         } 
         > p:nth-child(2) {
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 22px;
             margin-bottom: 10px;
+            text-align: center;
         }
         > p:nth-child(3) {
             margin: 0 0 10px 0;
+            text-align: center;
         }
         > a {
             text-align: center;
@@ -314,10 +355,6 @@ $margin: 50px;
         img {
             margin-left: 20px;
         }
-        .cup {
-            margin-left: 0;
-            margin-right: 20px;
-        }
         > div {
             width: 97%;
             display: flex;
@@ -327,6 +364,11 @@ $margin: 50px;
             border-bottom: $border;
         } 
     }
+}
+
+.cup {
+    margin-left: 0;
+    margin-right: 20px;
 }
 
 .timetable {
@@ -353,9 +395,14 @@ $margin: 50px;
 .fourth {
     height: 509px;
     width: 100%;
-    background: url(images/big_map.jpg);
-    display: flex;
+    position: relative;
+    display: flex;  
     align-items: flex-end;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
 }
 
 .mapLegend {
@@ -363,10 +410,21 @@ $margin: 50px;
     width: 420px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: white;
-    margin-left: 390px;
+    margin-left: 20%;
+    position: absolute;
     > .item:first-child {
         margin-top: 53px;
+    }
+    > .items {
+        width: 80%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 }
 
@@ -375,11 +433,9 @@ $margin: 50px;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-start;
-    justify-content: center;
     height: 61px;
     width: 100%;
-    margin-left: 10%;
-    > div {
+    > div:not(.image-container) {
         border-radius: 50%;
         background-color: $clDarkRed;
         color: white;
@@ -409,14 +465,27 @@ $margin: 50px;
 }
 
 .marieInLegend {
-    height: 80px;
+    height: 100px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    > p {
+        margin: 0;
+    }
+    > a {
+        width: 250px;
+    }
+}
+
+.image-container {
+    margin-right: 15px;
+    background: white;
+    height: 100%;
+    width: 67px;    
     > img {
         height: 61px;
         width: 61px;
-        margin-right: 20px;
-    }
-    > p {
-        margin: 0;
     }
 }
 
@@ -424,9 +493,6 @@ $margin: 50px;
     display: flex;
     flex-direction: column;
     margin-top: 100px;
-    > div {
-        margin-left: 20%;
-    }
     > a {
         align-self: center;
         margin-top: 40px;
@@ -437,37 +503,52 @@ $margin: 50px;
     font-weight: 500;
     font-size: 20px;
     line-height: 29px;
+    margin-left: 20%;
 }
 
 .feedback {
     display: flex;
-    margin-top: 40px;
-    > img {
-        height: 101px;
-        width: 101px;
-        margin-right: 20px;
-    }
+    flex-direction: column;
+    width: 655px;
+    margin-top: 30px;
     > div {
-        height: 100%;
-        border-bottom: $border;
-        width: 512px;
-        > div {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            > img {
-                height: 17px;
-                width: 118px;
-            }
-            > p:not(.profession) {
-                margin: 0;
-            }
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        > .mark {
+            align-self: flex-end;
+            margin-bottom: 1%;
         }
+    }
+    > p {
+        margin: 3% 0 4% 18%;
+    }
+    > .date {
+        margin: 0 0 0 18%;
+        padding-bottom: 4%;
+        border-bottom: $border;
+    }
+}
+
+.infoFeedback {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 81px;
+    margin-left: 20px;
+    > p {
+        margin:0;
+    }
+    > .profession {
+        margin: 10px 0;
     }
 }
 
 .name {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 18px;
     line-height: 22px;
     width: 100%;
@@ -561,6 +642,234 @@ footer {
     width: 100px;
 }
 
-@media (max-width: 425px) {
+// @media (max-width: 1050px) {
+//     .takelook {
+//         margin-left: 10%;
+//     }
 
+//     .numbers {
+//         width: 30%;
+//     }
+// }
+
+// @media (max-width: 660px) {
+//     header {
+//         > *:not(.takelook) {
+//             display: none;
+//         }
+//     }
+// }
+
+@media (max-width: 425px) {
+    
+    header {
+        height: 60px;
+        > *:not(.takelook) {
+            display: none;
+        }
+    }
+
+    .takelook {
+        margin-left: 5%;
+    }
+
+    .tagline {
+        height: 654px;
+        > .container {
+            margin: 0 0 0 5%;
+        }
+        background-image: url(images/Background.png);
+        background-position: bottom center;
+        background-repeat: no-repeat;
+    }
+
+    .third {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+        > .container {
+            width: 90%;
+            height: auto;
+            margin-top: 50px;
+        }
+    }
+
+    .description {
+        width: 100%;
+        flex-wrap: nowrap;
+        height: auto;
+        > img {
+            order: 1;
+            width: 100%;
+        }
+    }
+
+    .des-name {
+        align-self: center;
+        text-align: center;
+        order: 0;
+    }
+
+    .des-des {
+        order: 2;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .des-clock {
+        order: 3;
+    }
+    
+    .des-lang {
+        order: 4;
+    }
+
+    .des-money {
+        @include des();
+        order: 5;
+    }
+
+    .des-place {
+        order: 6;
+    }
+    
+    .des-photos {
+        order: 7;
+    }
+
+    .moreThan50 {
+        height: 76px;
+        order: 8;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+        justify-content: center;
+        > * {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        p {
+            margin-left: 20px;
+        }
+        *:first-child {
+            margin: 0 0 5% 0;
+        }
+    }
+
+    .photos {
+        > p {
+            text-align: center;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 34px;
+        }
+        > a {
+            margin-top: 20px;
+        }
+    }
+
+    .inner4 {
+        width: 100%;
+        border: none;
+        height: auto;
+    }
+    
+    .inner5 {
+        order: 0;
+        width: 100%;
+        height: auto;
+        border: none;
+    }
+
+    .cup {
+        margin: 0;
+    }
+
+    .inner6 {
+        order: 2;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        > p {
+            width: 100%;
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 34px;
+            text-align: center;
+        }
+    }
+
+    .fourth {
+        border: none;
+        // height: 400px;
+        height: auto;
+        width: 100%;
+        margin-top: 150px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    iframe {
+        height: 400px;
+    }
+
+    .mapLegend {
+        position: relative;
+        border: $border;
+        margin: 30px 0 0 0;
+        width: 90%;
+    }
+
+    .marieInLegend {
+        height: 104px;
+        .profession {
+            margin: 2px 0;
+        }
+    }
+
+    .fifth {
+        margin-top: 10px;
+    }
+
+    .feedbacks-container {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > p {
+            font-weight: normal;
+            font-size: 28px;
+            line-height: 42px;
+            text-align: center;
+        }
+        > div {
+            width: 90%;
+        }
+    }
+
+    .feedback {
+        width: 100%;
+        > div {
+            .mark {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+        > .message {
+            margin-left: 0;
+        }
+        > .date {
+            margin-left: 0;
+        }
+    }
+
+    header {
+        width: 100%;
+    }
 }  
