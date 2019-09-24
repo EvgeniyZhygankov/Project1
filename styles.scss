@@ -249,7 +249,7 @@ header {
 }
 
 .photos {
-    height: 530px;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -257,16 +257,9 @@ header {
     align-self: flex-start;
     border-bottom: $border;
     > div {
-        // display: grid;
-        // grid-template-rows: 1fr 1fr;
-        // grid-template-columns: 1fr 1fr 1fr 1fr;
-        // gap: 10px 10px;
-        // justify-items: stretch;
         display: flex;
         width: 100%;
         flex-wrap: wrap;
-        // justify-content: space-between;
-        // align-content: space-between;
         height: 100%;
         > img {
             margin: 0 10px 10px 0;
@@ -618,7 +611,7 @@ footer {
 .social-networks-lang {
     display: flex;
     align-items: center;
-    margin-right: 390px;
+    margin-right: 20%;
 }
 
 .lang {
@@ -655,26 +648,8 @@ footer {
     width: 100px;
 }
 
-// @media (max-width: 1050px) {
-//     .takelook {
-//         margin-left: 10%;
-//     }
-
-//     .numbers {
-//         width: 30%;
-//     }
-// }
-
-// @media (max-width: 660px) {
-//     header {
-//         > *:not(.takelook) {
-//             display: none;
-//         }
-//     }
-// }
-
 @media (max-width: 425px) {
-    
+
     header {
         height: 60px;
         > *:not(.takelook) {
@@ -894,5 +869,13 @@ footer {
 
     header {
         width: 100%;
+    }
+
+    .social-networks-lang {
+        margin: 0 5% 0 0;
+    }
+
+    .pays {
+        margin: 0 5% 0 5%;
     }
 }  

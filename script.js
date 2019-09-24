@@ -1,12 +1,9 @@
 
-var gallery, link, photos, witdh;
-// var link;
-// var photos;
-// var witdh; 
+var gallery, link, photos, width; 
 
 function ShowAll() {
     
-    if (witdh <= 425) {
+    if (width <= 425) {
 
         if (!gallery.classList.contains("showed-all")) {
 
@@ -40,12 +37,12 @@ function ChangeDisplayAtIMGs(displayValue) {
 
 window.onload = () => {
 
-    witdh = window.innerWidth - 23;
+    width = window.innerWidth - 23;
     gallery = document.querySelector(".photos");
     link =  document.querySelector(".photos > a");
     photos = document.querySelectorAll(".photos > div > img");
 
-    if (witdh <= 425) {
+    if (width <= 425) {
 
         ChangeDisplayAtIMGs("none");
 
@@ -60,11 +57,9 @@ window.onload = () => {
 
 window.onresize = () => {
 
-
-
-    witdh = window.innerWidth - 23;
+    width = window.innerWidth - 23;
     
-    if (witdh <= 425) {
+    if (width <= 425) {
 
         ChangeDisplayAtIMGs("none");
     }
@@ -77,6 +72,4 @@ window.onresize = () => {
             gallery.classList.remove("showed-all");
         }
     }
-
-    console.log("resize");
 }

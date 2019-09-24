@@ -337,7 +337,7 @@ header {
 }
 
 .photos {
-  height: 530px;
+  height: auto;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -863,7 +863,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 390px;
+  margin-right: 20%;
 }
 
 .lang {
@@ -1167,6 +1167,12 @@ footer {
   }
   header {
     width: 100%;
+  }
+  .social-networks-lang {
+    margin: 0 5% 0 0;
+  }
+  .pays {
+    margin: 0 5% 0 5%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
