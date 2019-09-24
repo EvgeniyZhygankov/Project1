@@ -355,14 +355,17 @@ header {
 }
 
 .photos > div {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px 10px;
-  justify-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+}
+
+.photos > div > img {
+  margin: 0 10px 10px 0;
 }
 
 .photos > p {
@@ -385,6 +388,11 @@ header {
   line-height: 25px;
   color: #5286EC;
   text-decoration: none;
+}
+
+.link:hover {
+  color: #52c2ee;
+  cursor: default;
 }
 
 .inner4 {
@@ -783,14 +791,18 @@ iframe {
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .profession {
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .mark, .date {
@@ -1031,6 +1043,9 @@ footer {
   .moreThan50 *:first-child {
     margin: 0 0 5% 0;
   }
+  .showed-all {
+    height: auto;
+  }
   .photos > p {
     text-align: center;
     font-weight: normal;
@@ -1039,6 +1054,14 @@ footer {
   }
   .photos > a {
     margin-top: 20px;
+  }
+  .photos > div {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .inner4 {
     width: 100%;
@@ -1080,7 +1103,7 @@ footer {
     border: none;
     height: auto;
     width: 100%;
-    margin-top: 150px;
+    margin-top: 100px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
